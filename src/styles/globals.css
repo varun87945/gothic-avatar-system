@@ -1,0 +1,123 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: #0b0b0b;
+  overflow: hidden;
+  font-family: "Noto Sans JP", Inter, system-ui, sans-serif;
+}
+
+/* VRMA Control Panel */
+
+.vrma-controls {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 340px;
+  max-height: calc(100vh - 20px);
+  overflow-y: auto;
+
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(12px);
+
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.panel-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.panel-header span {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.status {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #ccc;
+  text-align: center;
+}
+
+.animation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.vrma-controls button {
+  min-width: 90px;
+  padding: 10px 15px;
+
+  background: linear-gradient(145deg, #6a82fb, #fc5c7d);
+
+  color: white;
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.vrma-controls button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.vrma-controls button:active {
+  transform: translateY(1px);
+}
+
+.vrma-controls .vrma-btn {
+  background: linear-gradient(145deg, #4caf50, #2e8b57);
+}
+
+.panel-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.action-btn {
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  .vrma-controls {
+    width: calc(100vw - 20px);
+    left: 10px;
+    right: 10px;
+    padding: 14px;
+  }
+
+  .animation-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vrma-controls button {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+}

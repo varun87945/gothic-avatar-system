@@ -1,0 +1,4 @@
+/* Glassy dark panels */
+.gothic-panel {
+  @apply bg-gothicBlack/70 backdrop-blur-xs border border-gothicPurple/30 rounded-xl p-4;
+}
