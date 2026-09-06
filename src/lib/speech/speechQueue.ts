@@ -1,3 +1,11 @@
+﻿/*
+ * Gothic Avatar System
+ * Copyright © 2026 Varun. All Rights Reserved.
+ *
+ * This source code is proprietary.
+ * Unauthorized copying, modification, distribution,
+ * publication, or reuse is prohibited.
+ */
 import { SpeechRequest } from "@/types/speech";
 import { speak } from "./tts";
 import { generateVisemeTimeline } from "./visemeExtractor";
@@ -8,7 +16,7 @@ export interface QueueItem {
 }
 
 /**
- * Very lightweight FIFO queue – useful for chaining user utterances.
+ * Very lightweight FIFO queue â€“ useful for chaining user utterances.
  */
 export class SpeechQueue {
   private queue: QueueItem[] = [];
@@ -35,3 +43,4 @@ export class SpeechQueue {
     });
   }
 }
+

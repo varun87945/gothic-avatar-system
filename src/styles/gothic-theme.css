@@ -1,4 +1,13 @@
+﻿/*
+ * Gothic Avatar System
+ * Copyright © 2026 Varun. All Rights Reserved.
+ *
+ * This source code is proprietary.
+ * Unauthorized copying, modification, distribution,
+ * publication, or reuse is prohibited.
+ */
 /* Glassy dark panels */
 .gothic-panel {
   @apply bg-gothicBlack/70 backdrop-blur-xs border border-gothicPurple/30 rounded-xl p-4;
 }
+

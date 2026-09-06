@@ -1,3 +1,11 @@
+﻿/*
+ * Gothic Avatar System
+ * Copyright © 2026 Varun. All Rights Reserved.
+ *
+ * This source code is proprietary.
+ * Unauthorized copying, modification, distribution,
+ * publication, or reuse is prohibited.
+ */
 import { useEffect, useRef } from "react";
 import { VRM } from "@pixiv/three-vrm";
 import { BLINK_INTERVAL } from "@/lib/utils/constants";
@@ -24,3 +32,4 @@ export const useBlink = (vrm: VRM | null) => {
     return () => clearTimeout(timeoutRef.current);
   }, [vrm]);
 };
+

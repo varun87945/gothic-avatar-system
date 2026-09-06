@@ -1,3 +1,11 @@
+﻿/*
+ * Gothic Avatar System
+ * Copyright © 2026 Varun. All Rights Reserved.
+ *
+ * This source code is proprietary.
+ * Unauthorized copying, modification, distribution,
+ * publication, or reuse is prohibited.
+ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,3 +18,4 @@
   background: #8e44ad;
   border-radius: 4px;
 }
+

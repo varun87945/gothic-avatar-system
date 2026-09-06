@@ -1,3 +1,11 @@
+﻿/*
+ * Gothic Avatar System
+ * Copyright © 2026 Varun. All Rights Reserved.
+ *
+ * This source code is proprietary.
+ * Unauthorized copying, modification, distribution,
+ * publication, or reuse is prohibited.
+ */
 import * as THREE from "three";
 import { GLTFLoader } from "three-stdlib";
 import { VRM } from "@pixiv/three-vrm";

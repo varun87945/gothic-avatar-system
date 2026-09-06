@@ -1,3 +1,11 @@
+﻿/*
+ * Gothic Avatar System
+ * Copyright © 2026 Varun. All Rights Reserved.
+ *
+ * This source code is proprietary.
+ * Unauthorized copying, modification, distribution,
+ * publication, or reuse is prohibited.
+ */
 import { useEffect, useRef, useState } from "react";
 import { loadVRM } from "@/lib/vrm/loadVRM";
 import { VRM } from "@pixiv/three-vrm";
@@ -40,3 +48,4 @@ export const useVRM = (url: string) => {
 
   return { vrm, loading, error };
 };
+

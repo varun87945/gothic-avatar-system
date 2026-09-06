@@ -1,3 +1,11 @@
+﻿/*
+ * Gothic Avatar System
+ * Copyright © 2026 Varun. All Rights Reserved.
+ *
+ * This source code is proprietary.
+ * Unauthorized copying, modification, distribution,
+ * publication, or reuse is prohibited.
+ */
 import { VRM } from "@pixiv/three-vrm";
 
 /**
@@ -23,11 +31,11 @@ export function setBlendShapeValue(
     try {
       em.setValue(name, value);
       return; // first match wins
-    } catch { /* name not present on this model — try next */ }
+    } catch { /* name not present on this model â€” try next */ }
   }
 }
 
-// ── Convenience wrappers ──────────────────────────────────────────────────────
+// â”€â”€ Convenience wrappers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const Expressions = {
   smile:  (vrm: VRM, v: number) => setBlendShapeValue(vrm, "happy",   v, ["Happy", "joy", "Joy", "smile", "Smile"]),

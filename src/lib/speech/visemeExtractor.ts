@@ -1,3 +1,11 @@
+﻿/*
+ * Gothic Avatar System
+ * Copyright © 2026 Varun. All Rights Reserved.
+ *
+ * This source code is proprietary.
+ * Unauthorized copying, modification, distribution,
+ * publication, or reuse is prohibited.
+ */
 import { textToVisemes } from "./../vrm/visemes";
 import { VisemeKeyframe } from "@/types/visemes";
 
@@ -15,3 +23,4 @@ export function generateVisemeTimeline(text: string, duration: number): VisemeKe
     viseme: v.viseme as any
   }));
 }
+

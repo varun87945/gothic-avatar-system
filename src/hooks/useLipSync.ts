@@ -1,3 +1,11 @@
+﻿/*
+ * Gothic Avatar System
+ * Copyright © 2026 Varun. All Rights Reserved.
+ *
+ * This source code is proprietary.
+ * Unauthorized copying, modification, distribution,
+ * publication, or reuse is prohibited.
+ */
 import { useEffect, useRef } from "react";
 import { VRM } from "@pixiv/three-vrm";
 import { VisemeKeyframe } from "@/types/visemes";
@@ -51,3 +59,4 @@ export const useLipSync = (vrm: VRM | null) => {
 
   return { play };
 };
+

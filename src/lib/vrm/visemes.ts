@@ -1,3 +1,11 @@
+﻿/*
+ * Gothic Avatar System
+ * Copyright © 2026 Varun. All Rights Reserved.
+ *
+ * This source code is proprietary.
+ * Unauthorized copying, modification, distribution,
+ * publication, or reuse is prohibited.
+ */
 export const visemeMap: Record<string, string> = {
   a: "A",
   i: "I",
@@ -7,12 +15,12 @@ export const visemeMap: Record<string, string> = {
 };
 
 /**
- * Very naive phoneme → viseme extraction.
- * It works well enough for short sentences with the built‑in SpeechSynthesis.
+ * Very naive phoneme â†’ viseme extraction.
+ * It works well enough for short sentences with the builtâ€‘in SpeechSynthesis.
  */
 export function textToVisemes(text: string): { time: number; viseme: string }[] {
   const words = text.split(/\s+/);
-  const totalDuration = Math.max(words.length * 0.25, 1); // guess 250 ms per word
+  const totalDuration = Math.max(words.length * 0.25, 1); // guess 250â€¯ms per word
   const step = totalDuration / words.length;
   const frames: { time: number; viseme: string }[] = [];
 
@@ -25,3 +33,4 @@ export function textToVisemes(text: string): { time: number; viseme: string }[] 
 
   return frames;
 }
+
