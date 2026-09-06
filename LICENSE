@@ -1,17 +1,27 @@
-﻿                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
+﻿Copyright (c) 2026 Varun
+All Rights Reserved.
 
-   Copyright 2026 YOUR NAME
+PROPRIETARY SOFTWARE LICENSE
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+This software and its source code are proprietary and are protected by
+applicable copyright laws.
 
-       http://www.apache.org/licenses/LICENSE-2.0
+Permission is NOT granted to:
+- Copy or reproduce the source code
+- Fork or redistribute the source code
+- Publish the source code in another repository
+- Modify and redistribute the source code
+- Use the source code in another project
+- Use the source code for commercial purposes
+- Create derivative works based on the source code
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+Viewing this repository does not grant any license or ownership rights
+to the source code.
+
+Any use, reproduction, modification, distribution, publication, or
+commercial use requires prior written permission from the copyright
+holder.
+
+The copyright holder retains all rights not expressly granted in writing.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.

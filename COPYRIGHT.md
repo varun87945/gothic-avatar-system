@@ -1,15 +1,18 @@
-﻿# Copyright Notice 
- 
-Copyright © 2026 Varun k j. All rights reserved. 
- 
-This project and its source code are protected by copyright. 
- 
-No permission is granted to copy, reproduce, modify, distribute, 
-publish, sublicense, sell, or use this source code or any portion 
-of it without prior written permission from the copyright holder. 
- 
-The project may be viewed for evaluation and educational purposes, 
-but viewing the source code does not grant permission to reuse, 
-redistribute, or create derivative works from it. 
- 
-All rights reserved. 
+﻿# Copyright
+
+**Gothic Avatar System**
+
+Copyright © 2026 Varun. All Rights Reserved.
+
+The source code, documentation, original designs, artwork, assets,
+and other original materials contained in this repository are
+protected by copyright.
+
+No permission is granted to copy, modify, distribute, publish,
+fork, sublicense, sell, or reuse the project or its source code
+without prior written permission from the copyright holder.
+
+A public GitHub repository does not mean that the contents are
+licensed for reuse.
+
+For permission requests, contact the copyright holder.
