@@ -4,6 +4,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import path from "node:path";
 
 export default defineConfig({
+  base: "/gothic-avatar-system/",
   plugins: [react(), tsconfigPaths()],
   resolve: {
     alias: {
