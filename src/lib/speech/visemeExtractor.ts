@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Gothic Avatar System
  * Copyright © 2026 Varun. All Rights Reserved.
  *
@@ -11,7 +11,7 @@ import { VisemeKeyframe } from "@/types/visemes";
 
 /**
  * Returns a timestamped list of visemes for a given utterance.
- * The SpeechSynthesis API does not expeaceSign phoneme timing.
+ * The SpeechSynthesis API does not expose phoneme timing.
  * We approximate using an even split based on word count.
  */
 export function generateVisemeTimeline(text: string, duration: number): VisemeKeyframe[] {
