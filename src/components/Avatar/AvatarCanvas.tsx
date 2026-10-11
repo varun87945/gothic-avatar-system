@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Gothic Avatar System
  * Copyright © 2026 Varun. All Rights Reserved.
  *
@@ -64,7 +64,7 @@ export default function AvatarCanvas({ onReady }: Props) {
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "url('/backgrounds/neon-stage.png')",
+          backgroundImage: `url('${import.meta.env.BASE_URL}backgrounds/neon-stage.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

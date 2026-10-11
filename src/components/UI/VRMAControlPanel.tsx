@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Gothic Avatar System
  * Copyright © 2026 Varun. All Rights Reserved.
  *
@@ -12,7 +12,7 @@ import {
   PerspectiveCamera,
   useGLTF,
 } from "@react-three/drei";
-import { Suspense, useState } from "react";
+import { Suspense, useState, Component, ReactNode } from "react";
 
 import AvatarLoader from "../Avatar/AvatarLoader";
 import Lighting from "../Layout/Lighting";
@@ -32,8 +32,52 @@ type Props = {
   ) => void;
 };
 
+function FallbackEnvironment() {
+  return (
+    <>
+      <color attach="background" args={["#222222"]} />
+      <mesh
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, -0.17, 0]}
+        receiveShadow
+      >
+        <planeGeometry args={[20, 20]} />
+        <meshStandardMaterial
+          color="#1a1a1a"
+          roughness={0.8}
+          metalness={0.2}
+        />
+      </mesh>
+    </>
+  );
+}
+
+class EnvironmentErrorBoundary extends Component<
+  { children: ReactNode; fallback?: ReactNode },
+  { hasError: boolean }
+> {
+  state = { hasError: false };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error) {
+    console.warn("Failed to load 3D environment model, using fallback:", error);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback ?? null;
+    }
+    return this.props.children;
+  }
+}
+
 function Environment3D() {
-  const { scene } = useGLTF("/models/environment.glb");
+  const environmentModel =
+    `${import.meta.env.BASE_URL}models/environment.glb`;
+  const { scene } = useGLTF(environmentModel);
 
   return (
     <primitive
@@ -114,7 +158,9 @@ export default function AvatarCanvasDemo({ onReady }: Props) {
         />
 
         <Suspense fallback={null}>
-          <Environment3D />
+          <EnvironmentErrorBoundary fallback={<FallbackEnvironment />}>
+            <Environment3D />
+          </EnvironmentErrorBoundary>
 
           <group rotation={[0, Math.PI, 0]}>
             <AvatarLoader onReady={handleReady} onError={handleError} />
@@ -181,4 +227,6 @@ export default function AvatarCanvasDemo({ onReady }: Props) {
   );
 }
 
-useGLTF.preload("/models/environment.glb");
+useGLTF.preload(
+  `${import.meta.env.BASE_URL}models/environment.glb`
+);

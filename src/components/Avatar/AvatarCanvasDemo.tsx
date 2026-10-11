@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Gothic Avatar System
  * Copyright © 2026 Varun. All Rights Reserved.
  *
@@ -8,7 +8,7 @@
  */
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, useGLTF } from "@react-three/drei";
-import { Suspense, useState } from "react";
+import { Suspense, useState, Component, ReactNode } from "react";
 
 import AvatarLoader from "./AvatarLoader";
 import Lighting from "../Layout/Lighting";
@@ -24,7 +24,9 @@ type Props = {
 };
 
 function Environment3D() {
-  const { scene } = useGLTF("/models/environment.glb");
+  const environmentModel =
+    `${import.meta.env.BASE_URL}models/environment.glb`;
+  const { scene } = useGLTF(environmentModel);
 
   return (
     <primitive
@@ -56,6 +58,28 @@ function DemoFallbackEnvironment() {
       </mesh>
     </>
   );
+}
+
+class EnvironmentErrorBoundary extends Component<
+  { children: ReactNode; fallback?: ReactNode },
+  { hasError: boolean }
+> {
+  state = { hasError: false };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error) {
+    console.warn("Failed to load 3D environment model, using fallback:", error);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback ?? null;
+    }
+    return this.props.children;
+  }
 }
 
 export default function AvatarCanvasDemo({ onReady }: Props) {
@@ -129,7 +153,9 @@ export default function AvatarCanvasDemo({ onReady }: Props) {
         />
 
         <Suspense fallback={<DemoFallbackEnvironment />}>
-          <Environment3D />
+          <EnvironmentErrorBoundary fallback={<DemoFallbackEnvironment />}>
+            <Environment3D />
+          </EnvironmentErrorBoundary>
 
           <AvatarLoader onReady={handleReady} onError={handleError} />
           <Lighting />
@@ -193,4 +219,6 @@ export default function AvatarCanvasDemo({ onReady }: Props) {
   );
 }
 
-useGLTF.preload("/models/environment.glb");
+useGLTF.preload(
+  `${import.meta.env.BASE_URL}models/environment.glb`
+);

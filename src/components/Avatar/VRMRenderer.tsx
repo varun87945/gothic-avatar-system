@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Gothic Avatar System
  * Copyright © 2026 Varun. All Rights Reserved.
  *
@@ -18,29 +18,30 @@ import { useLipSync } from "@/hooks/useLipSync";
 import { useSpeech } from "@/hooks/useSpeech";
 import { playVRMA } from "@/lib/vrm/vrmaPlayer";
 
-const DEFAULT_IDLE = "/animations/idle_loop.vrma";
+const BASE = import.meta.env.BASE_URL;
+const DEFAULT_IDLE = `${BASE}animations/idle_loop.vrma`;
 
 const VRMA_MAP: Record<string, string> = {
-  happy: "/animations/Relax.vrma",
-  sad: "/animations/Sad.vrma",
-  angry: "/animations/Angry.vrma",
-  shy: "/animations/Blush.vrma",
-  sleepy: "/animations/Sleepy.vrma",
-  confused: "/animations/Thinking.vrma",
-  surprised: "/animations/Surprised.vrma",
+  happy: `${BASE}animations/Relax.vrma`,
+  sad: `${BASE}animations/Sad.vrma`,
+  angry: `${BASE}animations/Angry.vrma`,
+  shy: `${BASE}animations/Blush.vrma`,
+  sleepy: `${BASE}animations/Sleepy.vrma`,
+  confused: `${BASE}animations/Thinking.vrma`,
+  surprised: `${BASE}animations/Surprised.vrma`,
 
-  clapping: "/animations/Clapping.vrma",
-  goodbye: "/animations/Goodbye.vrma",
-  jump: "/animations/Jump.vrma",
-  lookaround: "/animations/LookAround.vrma",
+  clapping: `${BASE}animations/Clapping.vrma`,
+  goodbye: `${BASE}animations/Goodbye.vrma`,
+  jump: `${BASE}animations/Jump.vrma`,
+  lookaround: `${BASE}animations/LookAround.vrma`,
 
-  dancing: "/animations/dance.vrma",
-  greeting: "/animations/greeting.vrma",
-  pose: "/animations/modelPose.vrma",
-  showfullbody: "/animations/showFullBody.vrma",
-  spin: "/animations/spin.vrma",
-  shoot: "/animations/shoot.vrma",
-  peacesign: "/animations/peaceSign.vrma",
+  dancing: `${BASE}animations/dance.vrma`,
+  greeting: `${BASE}animations/greeting.vrma`,
+  pose: `${BASE}animations/modelPose.vrma`,
+  showfullbody: `${BASE}animations/showFullBody.vrma`,
+  spin: `${BASE}animations/spin.vrma`,
+  shoot: `${BASE}animations/shoot.vrma`,
+  peacesign: `${BASE}animations/peaceSign.vrma`,
 
   neutral: DEFAULT_IDLE,
 };
